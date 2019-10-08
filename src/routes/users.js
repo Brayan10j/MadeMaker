@@ -8,6 +8,10 @@ router.get('/users/signup', (req, res) => {
   res.render('users/signup');
 });
 
+router.get('/users/project', (req, res) => {
+  res.render('users/project');
+});
+
 router.post('/users/signup', async (req, res) => {
   let errors = [];
   const { name, email, password, confirm_password } = req.body;
