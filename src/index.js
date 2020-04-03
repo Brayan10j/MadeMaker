@@ -22,7 +22,7 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-// middlewares
+// middlewares  -- funciones antes que llegue al server
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 // routes
 app.use(require('./routes'));
 app.use(require('./routes/users'));
-app.use(require('./routes/notes'));
+app.use(require('./routes/projects'));
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
