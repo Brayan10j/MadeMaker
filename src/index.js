@@ -6,6 +6,13 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 
+const { ApolloServer, gql } = require('apollo-server-express');
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
+const server = new ApolloServer({ typeDefs, resolvers });
+
+
+
 // Initializations
 const app = express();
 require('./database');
@@ -23,6 +30,8 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // middlewares  -- funciones antes que llegue al server
+server.applyMiddleware({ app });
+
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
@@ -54,4 +63,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Server is listening
 app.listen(app.get('port'), () => {
   console.log('Server on port', app.get('port'));
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 });
+
+
+
+
+
+
+
