@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb://localhost/node-projects-db', {
-  useCreateIndex: true,
+const MONGODB_URI = process.env.MONGODB_URI;
+
+
+mongoose.connect(MONGODB_URI, {
+  
   useNewUrlParser: true
 })
   .then(db => console.log('DB is connected'))
