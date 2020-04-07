@@ -35,7 +35,7 @@ mongod --version
 ///////////////////////////////////////////////////////////////////////
 INICIAR APLICACION
 
-Clonar el repositorio desde github y configurarlo en github escritorio
+Clonar el repositorio desde github y configurarlo en github escritorio y (crear una reama (branch))
 
 EN VISUAL STUDIO CODE  (ABRIR 2 CONSOLAS UNA PARA MONGO Y OTRA PARA NODE JS )
 1 TERMINAL
