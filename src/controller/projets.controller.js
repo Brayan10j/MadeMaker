@@ -3,13 +3,22 @@ const Project = require('../models/Project');
 const projectCtrl = {};
 
 projectCtrl.agregarProject= async (req, res) => {
-    const { title, description } = req.body;
+    const { title, description ,ancho ,alto ,fondo } = req.body;
     const errors = [];
     if (!title) {
       errors.push({text: 'Please Write a Title.'});
     }
     if (!description) {
       errors.push({text: 'Please Write a Description'});
+    }
+    if (!ancho) {
+      errors.push({text: 'Digita las dimensiones'});
+    }
+    if (!alto) {
+      errors.push({text: 'Digita las dimensiones'});
+    }
+    if (!fondo) {
+      errors.push({text: 'Digita las dimensiones'});
     }
     if (errors.length > 0) {
       res.render('projects/new-project', {
@@ -18,8 +27,9 @@ projectCtrl.agregarProject= async (req, res) => {
         description
       });
     } else {
-      const newProject = new Project({title, description});
+      const newProject = new Project({title, description,ancho,alto,fondo});
       newProject.user = req.user.id;
+      newProject.precio = 2*((ancho*alto)+(ancho*fondo)+(alto*fondo))
       await newProject.save();
       req.flash('success_msg', 'Project Added Successfully');
       res.redirect('/projects');
