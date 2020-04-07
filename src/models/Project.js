@@ -14,6 +14,22 @@ const ProjectSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  ancho: {
+    type: String,
+    required: true
+  },
+  alto: {
+    type: Number,
+    
+  },
+  fondo: {
+    type: Number,
+    
+  },
+  precio: {
+    type: Number,
+    
+  },
   user: {
     type: String,
     required: true
