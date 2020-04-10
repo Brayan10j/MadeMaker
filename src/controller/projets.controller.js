@@ -79,4 +79,13 @@ projectCtrl.adquirirPlan = async (req, res) => {
   res.render('projects/planes', { project });
 }
 
+projectCtrl.enviarProject = async (req, res) => {
+  const project = await Project.findById(req.params.id);
+  if(project.user != req.user.id) {
+    req.flash('error_msg', 'Not Authorized');
+    return res.redirect('/projects');
+  } 
+  res.render('projects/project', { project });
+}
+
 module.exports = projectCtrl;
