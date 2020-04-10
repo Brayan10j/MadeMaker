@@ -29,7 +29,7 @@ projectCtrl.agregarProject= async (req, res) => {
     } else {
       const newProject = new Project({title, description,ancho,alto,fondo});
       let diseño = Math.trunc(40000*(ancho/100));
-      let fabricacion = Math.round10(((4*((ancho*alto)+(ancho*fondo)+(alto*fondo)))*(130000/44408))+(diseño));
+      let fabricacion = Math.round(((4*((ancho*alto)+(ancho*fondo)+(alto*fondo)))*(130000/44408))+(diseño));
       let envio = fabricacion+50000;
       let instalacion = envio + 50000;
       newProject.user = req.user.id;
