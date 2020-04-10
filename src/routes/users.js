@@ -7,10 +7,7 @@ const userCtrl = require('../controller/users.controller');
 
 router.get('/users/signup', userCtrl.singUp);
 
-// route para crear el boceto del mueble
-router.get('/users/project', (req, res) => {
-  res.render('users/project');
-});
+
 
 //
 router.post('/users/signup', userCtrl.registrerUser);
