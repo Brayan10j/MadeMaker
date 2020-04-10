@@ -5,12 +5,12 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 
 require('dotenv').config();
+
 // Initializations
 const app = require('./server');
-require('./database');
-require('./config/passport');
 
-// middlewares  -- funciones antes que llegue al server
+
+// middlewares  -- funciones antes que llegue al server (esto solo es pa graphql [prueba])
 server.applyMiddleware({ app });
 
 // Server is listening
