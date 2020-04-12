@@ -11,7 +11,7 @@
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title"> $ {{project.precio.diseño}}</h1>
-       
+
         <ul class="list-unstyled mt-3 mb-4">
           <li>Modelo del mueble</li>
           <li>Despiece del mueble en ecxel</li>
@@ -25,7 +25,8 @@
         <h4 class="my-0 font-weight-normal">Fabricacion</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$ {{project.precio.fabricacion}}<small class="text-muted"></small></h1>
+        <h1 class="card-title pricing-card-title">$ {{project.precio.fabricacion}}<small class="text-muted"></small>
+        </h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Modelo del mueble</li>
           <li>Despiece del mueble en ecxel</li>
@@ -48,7 +49,8 @@
           <li>Mueble completamente fabricado</li>
           <li>Envio a domicilio</li>
         </ul>
-        <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';" class="btn btn-lg btn-block btn-primary">Escojer</button>
+        <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';"
+          class="btn btn-lg btn-block btn-primary">Escojer</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -56,7 +58,8 @@
         <h4 class="my-0 font-weight-normal">Instalacion</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$ {{project.precio.instalacion}} <small class="text-muted"></small></h1>
+        <h1 class="card-title pricing-card-title">$ {{project.precio.instalacion}} <small class="text-muted"></small>
+        </h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Modelo del mueble</li>
           <li>Despiece del mueble en ecxel</li>
@@ -65,11 +68,17 @@
           <li>Envio a domicilio</li>
           <li>Instalacion del mueble</li>
         </ul>
+        
+        <form action="/projects/pagos" method="POST">
+          <script src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+            data-preference-id="$$id$$">
+            </script>
+        </form>
         <button type="button" class="btn btn-lg btn-block btn-primary">Escojer</button>
       </div>
     </div>
   </div>
 
-  
+
 </div>
 </div>

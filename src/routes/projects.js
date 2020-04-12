@@ -5,6 +5,11 @@ const projectCtrl = require('../controller/projets.controller');
 // Helpers
 const { isAuthenticated } = require('../helpers/auth');
 
+
+router.get('/projects/pagos',isAuthenticated, (req, res) => {
+  console.log(req.body);
+  res.render('projects/new-project');
+});
 // route para crear el boceto del mueble
 router.get('/projects/project/:id', isAuthenticated, projectCtrl.enviarProject);
 
