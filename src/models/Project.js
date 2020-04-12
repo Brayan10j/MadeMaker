@@ -21,16 +21,16 @@ const ProjectSchema = new Schema({
     instalacion:Number
   },
   ancho: {
-    type: String,
-    
+    type: Number,
+    required: true
   },
   alto: {
     type: Number,
-    
+    required: true
   },
   fondo: {
     type: Number,
-    
+    required: true
   },
   user: {
     type: String,
