@@ -1,10 +1,15 @@
-const schema = `
+const { gql } = require('apollo-server-express');
+const schema = gql`
 type Query {
   Users: [User]
 }
 
-type Mutation{
-  createUser(input: Userinput): User
+type Mutation {
+  createUser(
+    name: String!
+    email: String!
+    password: String!
+  ): String
 }
 
 type User{
@@ -15,12 +20,7 @@ type User{
   date: String
 }
 
-input Userinput{
-  name: String!
-  email: String!
-  password: String!
-  date: String
-}
+
 `;
 
 module.exports = schema ;

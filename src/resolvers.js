@@ -8,10 +8,25 @@ const resolvers = {
       } 
   },
   Mutation: {
-    createUser: async (parent, args, { Input }) => {
-      //const newUser = await new User(args).save();
-      console.log('esoo');
-      return User;
+    createUser: async ( _ , args) => {
+      
+      const emailUser = await User.findOne({email: args.email});
+      if(emailUser) {
+        console.log("email ya existe");
+        return "Email ya existe"
+      } else {
+        // Saving a New User
+        const newUser = new User({
+          name: args.name,
+          email: args.email,
+          password :args.password
+          });
+        newUser.password = await newUser.encryptPassword(args.password);
+        await newUser.save();
+        return "Registrado"
+        
+      }
+      
     }
   }
 };
