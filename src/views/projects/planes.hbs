@@ -3,70 +3,72 @@
   <p class="lead">Podras escojer alguno de los siguientes planes</p>
 </div>
 
-<div class="container">
-  <div class="card-deck mb-3 text-center">
+<div class="container-fluid">
+  <div class="card-deck mb-3 ">
     <div class="card mb-4 shadow-sm">
-      <div class="card-header">
+      <div class="card-header text-center">
         <h4 class="my-0 font-weight-normal">Diseño</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title"> $ {{project.precio.diseño}}</h1>
+        <h1 class="card-title pricing-card-title text-center "> $ {{project.precio.diseño}}</h1>
 
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>Modelo del mueble</li>
-          <li>Despiece del mueble en ecxel</li>
-          <li>Manual de instalacion</li>
+        <ul class="list-group mt-3 mb-4">
+          <li class="list-group-item">Modelo del mueble</li>
+          <li class="list-group-item">Despiece del mueble en ecxel</li>
+          <li class="list-group-item">Manual de instalacion</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Escojer</button>
+        
       </div>
+      <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';" class="btn btn-lg btn-block btn-primary">Escojer</button>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Fabricacion</h4>
+        <h4 class="my-0 font-weight-normal text-center">Fabricacion</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$ {{project.precio.fabricacion}}<small class="text-muted"></small>
+        <h1 class="card-title pricing-card-title text-center">$ {{project.precio.fabricacion}}<small class="text-muted"></small>
+        </h1>
+        <ul class="list-group mt-3 mb-4">
+          <li class="list-group-item">Modelo del mueble</li>
+          <li class="list-group-item">Despiece del mueble en ecxel</li>
+          <li class="list-group-item">Manual de instalacion</li>
+          <li class="list-group-item">Mueble completamente fabricado</li>
+        </ul>
+        
+      </div>
+      <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';" class="btn btn-lg btn-block btn-primary">Escojer</button>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal text-center">Envio</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title text-center">$ {{project.precio.envio}} <small class="text-muted"></small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li class="list-group-item">Modelo del mueble</li>
+          <li class="list-group-item">Despiece del mueble en ecxel</li>
+          <li class="list-group-item">Manual de instalacion</li>
+          <li class="list-group-item">Mueble completamente fabricado</li>
+          <li class="list-group-item">Envio a domicilio</li>
+        </ul>
+        
+      </div>
+      <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';" class="btn btn-lg btn-block btn-primary">Escojer</button>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal text-center">Instalacion</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title text-center">$ {{project.precio.instalacion}} <small class="text-muted"></small>
         </h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>Modelo del mueble</li>
-          <li>Despiece del mueble en ecxel</li>
-          <li>Manual de instalacion</li>
-          <li>Mueble completamente fabricado</li>
-        </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Escojer</button>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Envio</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">$ {{project.precio.envio}} <small class="text-muted"></small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>Modelo del mueble</li>
-          <li>Despiece del mueble en ecxel</li>
-          <li>Manual de instalacion</li>
-          <li>Mueble completamente fabricado</li>
-          <li>Envio a domicilio</li>
-        </ul>
-        <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';"
-          class="btn btn-lg btn-block btn-primary">Escojer</button>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Instalacion</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">$ {{project.precio.instalacion}} <small class="text-muted"></small>
-        </h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>Modelo del mueble</li>
-          <li>Despiece del mueble en ecxel</li>
-          <li>Manual de instalacion</li>
-          <li>Mueble completamente fabricado</li>
-          <li>Envio a domicilio</li>
-          <li>Instalacion del mueble</li>
+          <li class="list-group-item">Modelo del mueble</li>
+          <li class="list-group-item">Despiece del mueble en ecxel</li>
+          <li class="list-group-item">Manual de instalacion</li>
+          <li class="list-group-item">Mueble completamente fabricado</li>
+          <li class="list-group-item">Envio a domicilio</li>
+          <li class="list-group-item">Instalacion del mueble</li>
         </ul>
         
         <form action="/projects/pagos" method="POST">
@@ -74,11 +76,18 @@
             data-preference-id="$$id$$">
             </script>
         </form>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Escojer</button>
+        
       </div>
+      <button type="button" onclick="window.location.href = 'https://recarga.nequi.com.co/bdigitalpsl/#!/';" class="btn btn-lg btn-block btn-primary">Escojer</button>
     </div>
   </div>
 
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">Nota!</h4>
+  <p class="mb-0">En el momento la pasarela de pago se encuentra en mantenimiento para realizar tu pago puedes hacerlo atraves de recargas nequi utilizando el boton "Escojer" y enviando dinero a el siguiente numero <b> 3222195416</b>
+  si deseas otro medio puedes comunicarte a traves de un mensaje a el mismo numero.</p>
+</div>
 
 </div>
 </div>
