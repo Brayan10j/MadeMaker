@@ -10,7 +10,7 @@
         <!-- DELETE REQUEST -->
         <form action="/projects/delete/{{_id}}?_method=DELETE" method="POST">
           <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
         </form>
         <br>
         <button onclick="window.location.href = '/projects/project/{{_id}}';" class="btn btn-primary btn-block btn-sm"> Enviar Proyecto </button>
@@ -23,9 +23,9 @@
   {{else}}
   <div class="card mx-auto">
     <div class="card-body">
-      <h1>Hello {{user.name}}</h1>
-      <p clsss="lead">There are not Projects yet.</p>
-      <a href="/projects/add" class="btn btn-success btn-block">Create One!</a>
+      <h1>Hola! {{user.name}}</h1>
+      <p clsss="lead">Aun no haz creado un proyecto.</p>
+      <a href="/projects/add" class="btn btn-success btn-block">Crear un proyecto</a>
     </div>
   </div>
   {{/each}}

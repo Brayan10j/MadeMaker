@@ -6,19 +6,19 @@ projectCtrl.agregarProject= async (req, res) => {
     const { title, description ,ancho ,alto ,fondo } = req.body;
     const errors = [];
     if (!title) {
-      errors.push({text: 'Please Write a Title.'});
+      errors.push({text: 'Escribe un titulo'});
     }
     if (!description) {
-      errors.push({text: 'Please Write a Description'});
+      errors.push({text: 'Escribe una descripción'});
     }
     if (!ancho) {
-      errors.push({text: 'Digita las dimensiones'});
+      errors.push({text: 'Digita el ancho'});
     }
     if (!alto) {
-      errors.push({text: 'Digita las dimensiones'});
+      errors.push({text: 'Digita el alto'});
     }
     if (!fondo) {
-      errors.push({text: 'Digita las dimensiones'});
+      errors.push({text: 'Digita el fondo'});
     }
     if (errors.length > 0) {
       res.render('projects/new-project', {
@@ -38,7 +38,7 @@ projectCtrl.agregarProject= async (req, res) => {
       newProject.precio.envio = envio;
       newProject.precio.instalacion = instalacion;
       await newProject.save();
-      req.flash('success_msg', 'Project Added Successfully');
+      req.flash('success_msg', 'Proyecto creado!!');
       res.redirect('/projects');
     }
 }
@@ -60,13 +60,13 @@ projectCtrl.mostrarProject = async (req, res) => {
 projectCtrl.editProject = async (req, res) => {
     const { title, description } = req.body;
     await Project.findByIdAndUpdate(req.params.id, {title, description});
-    req.flash('success_msg', 'Project Updated Successfully');
+    req.flash('success_msg', 'Proyecto actualizado!!');
     res.redirect('/projects');
 }
 
 projectCtrl.deleteProject = async (req, res) => {
     await Project.findByIdAndDelete(req.params.id);
-    req.flash('success_msg', 'Project Deleted Successfully');
+    req.flash('success_msg', 'Proyecto eliminado!!');
     res.redirect('/projects');
 }
 
