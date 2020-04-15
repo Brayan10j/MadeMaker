@@ -37,6 +37,7 @@ projectCtrl.agregarProject= async (req, res) => {
       newProject.precio.fabricacion = fabricacion;
       newProject.precio.envio = envio;
       newProject.precio.instalacion = instalacion;
+      newProject.EPago = false;
       await newProject.save();
       req.flash('success_msg', 'Proyecto creado!!');
       res.redirect('/projects');

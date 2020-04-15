@@ -32,6 +32,9 @@ const ProjectSchema = new Schema({
     type: Number,
     required: true
   },
+  EPago:{
+    type: Boolean
+  },
   user: {
     type: String,
     required: true
