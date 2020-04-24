@@ -14,12 +14,7 @@ const ProjectSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  precio:{
-    diseño: Number,
-    fabricacion: Number,
-    envio: Number,
-    instalacion:Number
-  },
+  
   ancho: {
     type: Number,
     required: true
