@@ -1,4 +1,5 @@
 const Project = require('../models/Project');
+const Precio = require('../models/Precio');
 
 const projectCtrl = {};
 
@@ -28,15 +29,7 @@ projectCtrl.agregarProject= async (req, res) => {
       });
     } else {
       const newProject = new Project({title, description,ancho,alto,fondo});
-      let diseño = Math.trunc(40000*(ancho/100));
-      let fabricacion = Math.round(((4*((ancho*alto)+(ancho*fondo)+(alto*fondo)))*(130000/44408))+(diseño));
-      let envio = fabricacion+50000;
-      let instalacion = envio + 50000;
       newProject.user = req.user.id;
-      newProject.precio.diseño = diseño;
-      newProject.precio.fabricacion = fabricacion;
-      newProject.precio.envio = envio;
-      newProject.precio.instalacion = instalacion;
       newProject.EPago = false;
       await newProject.save();
       req.flash('success_msg', 'Proyecto creado!!');
@@ -66,18 +59,29 @@ projectCtrl.editProject = async (req, res) => {
 }
 
 projectCtrl.deleteProject = async (req, res) => {
-    await Project.findByIdAndDelete(req.params.id);
-    req.flash('success_msg', 'Proyecto eliminado!!');
-    res.redirect('/projects');
+    const project = await Project.findByIdAndDelete(req.params.id);
+    if (project.EPago) {
+      await Precio.findOneAndDelete({project: req.params.id})
+      req.flash('success_msg', 'Proyecto eliminado y sus precios!!');
+      res.redirect('/projects');
+    } else {
+      req.flash('success_msg', 'Proyecto eliminado!!');
+      res.redirect('/projects');
+    }
+    
+    
 }
 
 projectCtrl.adquirirPlan = async (req, res) => {
+  const precio = await Precio.findOne({project: req.params.id});
+  
   const project = await Project.findById(req.params.id);
   if(project.user != req.user.id) {
     req.flash('error_msg', 'Not Authorized');
     return res.redirect('/projects');
   } 
-  res.render('projects/planes', { project });
+  res.render('projects/planes', { precio });
+  
 }
 
 projectCtrl.enviarProject = async (req, res) => {
