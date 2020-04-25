@@ -4,7 +4,7 @@ const Precio = require('../models/Precio');
 const projectCtrl = {};
 
 projectCtrl.agregarProject= async (req, res) => {
-    const { title, description ,ancho ,alto ,fondo } = req.body;
+    const { title, description, direccion ,ancho ,alto ,fondo } = req.body;
     const errors = [];
     if (!title) {
       errors.push({text: 'Escribe un titulo'});
@@ -28,7 +28,7 @@ projectCtrl.agregarProject= async (req, res) => {
         description
       });
     } else {
-      const newProject = new Project({title, description,ancho,alto,fondo});
+      const newProject = new Project({title, description,direccion,ancho,alto,fondo});
       newProject.user = req.user.id;
       newProject.EPago = false;
       await newProject.save();
