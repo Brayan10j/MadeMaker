@@ -31,7 +31,7 @@ router.post('/adminXa', async (req, res) => {
 
 router.put('/adminXa/precios/:id', async (req, res) => {
   
-  const { diseño, fabricacion, envio, instalacion } = req.body; 
+  const { dis, fabricacion, envio, instalacion } = req.body; 
   const existe = await Precio.findOne({project: req.params.id});
   console.log(existe);
   if (existe) {
@@ -40,7 +40,7 @@ router.put('/adminXa/precios/:id', async (req, res) => {
     res.redirect('/adminXa');
 
   } else {
-    const newPrecio = new Precio({ diseño, fabricacion, envio, instalacion });
+    const newPrecio = new Precio({ dis, fabricacion, envio, instalacion });
     newPrecio.project = req.params.id;
     await newPrecio.save();
     try {

@@ -8,7 +8,7 @@ const ProjectSchema = new Schema({
     type: String,
     required: true
   },
-  diseño: {
+  dis: {
     type: Number,
     required: true
   },
