@@ -14,7 +14,10 @@ const ProjectSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  
+  direccion: {
+    type: String,
+    required: true
+  },
   ancho: {
     type: Number,
     required: true
